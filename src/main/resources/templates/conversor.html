@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/conversor}" th:object="${conversorDTO}" method="post">
+        <div>
+            <label for="dolares">Introduce dólares</label>
+            <input type="number" id="dolares" th:field="*{dolares}">
+        </div>
+
+        <button id="submit">Aceptar</button>
+
+    </form>
+    <div th:if="${conversor}">
+        <span th:text="${conversor}"></span>
+
+    </div>
+
+</body>
+</html>

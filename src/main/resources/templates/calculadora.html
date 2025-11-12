@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="/calculadora.css">
+</head>
+<body>
+
+<form th:action="@{/calculadora} " th:object="${calculadoraDTO}" method="post">
+    <div>
+        <label for="numero1">Escribe el primer número</label>
+        <input type="number" id="numero1" th:field="*{nota1}" required>
+    </div>
+    <div>
+        <label for="numero2">Escribe el segundo número</label>
+        <input type="number" id="numero2" th:field="*{nota2}" required>
+    </div>
+    <div>
+        <label for="numero3">Escribe el tercer número</label>
+        <input type="number" id="numero3" th:field="*{nota3}" required>
+    </div>
+
+    <button id="submit">Calular</button>
+
+
+
+</form>
+
+<div th:if="${calculo}">
+    <span th:text="${calculo}"></span>
+</div>
+
+</body>
+</html>

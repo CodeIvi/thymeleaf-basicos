@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/datos}" th:object="${misDatosDTO}" method="post">
+        <div>
+            <label for="nombre"> Introduce nombre</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required>
+        </div>
+        <div>
+            <label for="apellido1">Escribe el primer apellido</label>
+            <input type="text" id="apellido1" th:field="*{apellido1}" required>
+        </div>
+        <div>
+            <label for="apellido2">Escribe el primer apellido</label>
+            <input type="text" id="apellido2" th:field="*{apellido2}" required>
+
+        </div>
+
+        <button id="submit">Aceptar</button>
+
+    </form>
+    <div th:if="${datos}">
+            <span th:text="${datos}"></span>
+
+    </div>
+
+</body>
+</html>

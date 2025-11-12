@@ -1,4 +1,4 @@
-package org.iesvdm.thymeleafbasicos.model;
+package org.iesvdm.thymeleafbasicos.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
