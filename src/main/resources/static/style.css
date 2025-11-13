@@ -1,0 +1,133 @@
+/* /home/ivan/Proyectos java/thymeleaf-basicos/src/main/resources/static/style.css */
+
+/* Colores y espaciado reutilizables */
+:root{
+    --bg-warm-1: #FFF4E6;    /* fondo cálido */
+    --bg-warm-2: #FFE8D6;    /* degradado */
+    --text-dark: #3b2f2f;
+    --accent: #FFB86B;
+    --card-bg: #ffffffcc;    /* ligeramente translúcido para contraste */
+    --result-bg: #FFF8F0;
+    --radius: 12px;
+    --gap: 1rem;
+    --max-width: 900px;
+}
+
+/* Reset ligero */
+*{box-sizing: border-box; margin:0; padding:0}
+html,body{height:100%}
+
+/* Estilo global: fondo cálido y fuente legible */
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg-warm-1), var(--bg-warm-2));
+    color: var(--text-dark);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--gap);
+    min-height: 100%;
+}
+
+/* Contenedor principal centrado y en columna */
+.app-container{
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column; /* en columna como pediste */
+    gap: calc(var(--gap) * 1.25);
+    align-items: stretch;
+}
+
+/* Tarjetas para formulario y resultado con separación clara */
+.card{
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(33,20,10,0.08);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Formulario: diseño en columna, inputs accesibles */
+.form-card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Titulares pequeños para distinguir secciones */
+.card h2{
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+/* Inputs y textarea */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea{
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #fff;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(255,184,107,0.12);
+}
+
+/* Botón principal */
+button{
+    cursor: pointer;
+    background: var(--accent);
+    color: #2b1a00;
+    padding: 0.6rem 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform .08s ease, box-shadow .12s ease;
+}
+
+button:hover{ transform: translateY(-1px); box-shadow: 0 8px 20px rgba(255,184,107,0.12) }
+button:active{ transform: translateY(0) }
+
+/* Contenedor del resultado diferenciado visualmente */
+.result-card{
+    background: var(--result-bg);
+    border-left: 6px solid var(--accent);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(33,20,10,0.05);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    word-wrap: break-word;
+}
+
+/* Mensajes o valores resaltados dentro del resultado */
+.result-card .value{
+    background: rgba(255,184,107,0.08);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Ayuda visual para etiquetas y pequeñas notas */
+label{
+    font-size: 0.9rem;
+    color: rgba(59,47,47,0.9);
+    margin-bottom: 0.25rem;
+    display:block;
+}
