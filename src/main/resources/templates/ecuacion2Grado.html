@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -10,12 +11,12 @@
 
         <div>
             <label for="valorA">Introduce el valor de A</label>
-            <input type="number" id="valorA" th:field="*{a}" required>
+            <input type="number" step="any" id="valorA" th:field="*{a}" required>
         </div>
 
         <div>
             <label for="valorB">Introduce el valor de B</label>
-            <input type="number" id="valorB" th:field="*{b}" required>
+            <input type="number" step="any" id="valorB" th:field="*{b}" required>
 
         </div>
         <div>

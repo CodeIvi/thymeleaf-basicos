@@ -1,20 +1,15 @@
 package org.iesvdm.thymeleafbasicos.DTO;
 
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@Data
 @NoArgsConstructor
+@Data
 @Builder
-public class Ecuacion2GradoDTO {
-    @NotEmpty
-    private double a;
-    @NotEmpty
-    private double b;
-    @NotEmpty
-    private double c;
+public class CallendarDTO {
+    private String mes;
+    private int anio;
 }
