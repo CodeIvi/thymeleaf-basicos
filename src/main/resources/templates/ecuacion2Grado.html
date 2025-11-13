@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/ecuacion2Grado}" th:object="${ecuacion2GradoDTO}" method="post">
+
+        <div>
+            <label for="valorA">Introduce el valor de A</label>
+            <input type="number" id="valorA" th:field="*{a}" required>
+        </div>
+
+        <div>
+            <label for="valorB">Introduce el valor de B</label>
+            <input type="number" id="valorB" th:field="*{b}" required>
+
+        </div>
+        <div>
+            <label for="valorC">Introduce el valor de C</label>
+            <input type="number" id="valorC" th:field="*{c}" required>
+
+        </div>
+
+        <button id="submit">Aceptar</button>
+
+    </form>
+
+    <div th:if="${ecuacion == true}">
+        <span th:text="${'Los resultados pueden ser: '+ #numbers.formatDecimal(resultado1,1,2)+ ' y ' + #numbers.formatDecimal(resultado2,1,2)}"></span>
+    </div>
+
+    <div th:if="${ecuacion == false}">
+        <span th:text="${'No existen soluciones reales para la ecuación'}"></span>
+    </div>
+
+</body>
+</html>

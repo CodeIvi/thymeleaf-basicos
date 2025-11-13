@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Ecuacion2GradoDTO {
-    private double a;
-    private double b;
-    private double c;
+public class TablaMultDTO {
+    private int num;
+    private String multiplicador = "*";
+    private int factor;
+    private int resultado;
 }
