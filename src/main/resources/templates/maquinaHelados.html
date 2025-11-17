@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/helados.css">
+</head>
+<body>
+    <div class="fondo">
+
+        <form th:action="@{/maquinaHelados}" th:object="${helado}" method="post">
+
+            <div>
+            <label for="choco">Escribe porcentaje de helado de chocolate</label>
+            <input type="number" id="choco" th:field="*{porcChoco}">
+            </div>
+
+            <div>
+                <label for="fresa">Escribe porcentaje de helado de fresa</label>
+                <input type="number" id="fresa" th:field="*{porcFresa}">
+            </div>
+
+            <div>
+                <label for="vainilla">Escribe porcentaje de helado de vainilla</label>
+                <input type="number" id="vainilla" th:field="*{porcVainilla}">
+            </div>
+
+            <button>Aceptar</button>
+
+        </form>
+
+
+        <div class="tarrina">
+            <div th:if="${helado.porcChoco > 0}"
+                 th:style="'height:' + ${helado.porcChoco} + '%'"
+                 class="sabor chocolate">
+                Chocolate: <span th:text="${helado.porcChoco} + '%'"></span>
+            </div>
+
+            <div th:if="${helado.porcFresa > 0}"
+                 th:style="'height:' + ${helado.porcFresa} + '%'"
+                 class="sabor fresa">
+                Fresa: <span th:text="${helado.porcFresa} + '%'"></span>
+            </div>
+
+            <div th:if="${helado.porcVainilla > 0}"
+                 th:style="'height:' + ${helado.porcVainilla} + '%'"
+                 class="sabor vainilla">
+                Vainilla: <span th:text="${helado.porcVainilla} + '%'"></span>
+            </div>
+        </div>
+
+
+        <div th:if="error">
+            <span th:text="${error}"></span>
+        </div>
+    </div>
+</body>
+</html>

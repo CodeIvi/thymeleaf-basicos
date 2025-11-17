@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/ajedrez.css">
 </head>
 <body>
-    for
+<h2>Tablero de ajedrez con 2 piezas aleatorias</h2>
 
-    <div th:each="${f}"
+<table>
+    <tr th:each="r: ${rows}">
+        <td th:each="c: ${cols}"
+            th:class="${(r + c) % 2 == 0} ? 'white' : 'black'">
+        <!-- Primera pieza -->
+        <span th:if="${r == x and c == y}">♞</span>
+
+        <!-- Segunda pieza, solo si no coincide con la primera -->
+        <span th:if="${r == x1 and c == y1 and !(x == x1 and y == y1)}">♛</span>
+
+        </td>
+    </tr>
+</table>
+
+
 
 </body>
 </html>

@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AjedrezDTO {
-    private int[] fila ={1,2,3,4,5,6,7,8};
-    private int[] columna = {1,2,3,4,5,6,7,8};
+public class MaquinaHeladosDTO {
+   private int porcChoco;
+   private int porcFresa;
+   private int porcVainilla;
 }

@@ -1,0 +1,157 @@
+/* Contenedor de la tarrina */
+
+.fondo{
+background-color:  rgb(241, 229, 176);
+width 100%
+}
+
+.tarrina {
+    width: 300px;                      /* ancho de la tarrina */
+    height: 400px;                     /* alto fijo para la tarrina */
+    border: 2px solid #000;            /* borde de la tarrina */
+    border-radius: 10px;               /* esquinas redondeadas */
+    overflow: hidden;                  /* recorta los sabores que sobresalgan */
+    margin: 20px auto;                 /* centrado horizontal */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    background-color: #FDF6E3;         /* fondo pastel */
+    display: flex;
+    flex-direction: column-reverse;    /* poner el primer sabor abajo */
+}
+
+/* Cada capa de sabor */
+.sabor {
+    width: 100%;                       /* ocupa todo el ancho */
+    text-align: center;                 /* texto centrado */
+    line-height: 2;                     /* altura de línea para centrar el texto verticalmente */
+    font-weight: bold;
+    color: white;                       /* color de texto por defecto */
+    transition: height 0.3s;           /* animación al cambiar altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;                     /* tamaño base del texto */
+}
+
+/* Colores de los sabores */
+.chocolate { background-color: #D2A679; color: black; } /* chocolate pastel */
+.fresa { background-color: #FFB3B3; color: black; }     /* fresa pastel */
+.vainilla { background-color: #FFF3B3; color: black; }  /* vainilla pastel */
+
+/* Hueco si la suma < 100% */
+.hueco { background-color: #EDEDED; color: black; }
+
+/* Opcional: hover sobre la tarrina para resaltar */
+.tarrina:hover {
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Texto de los porcentajes */
+.sabor span {
+    font-size: 0.9em;
+}
+
+/* Ajuste dinámico del tamaño de fuente proporcional al porcentaje */
+.sabor[data-porcentaje] {
+    font-size: calc(0.8em + (var(--porcentaje) * 0.05em));
+}
+
+/* Fondo general */
+.fondo {
+    background-color: #FDF6E3;       /* color pastel suave */
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Formulario */
+form {
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+    background-color: #FFF3E0;       /* color pastel */
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+/* Encabezados de formulario */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #6B4F3F;                  /* chocolate pastel */
+}
+
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #D2A679;       /* borde pastel */
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input[type="number"]:focus {
+    border-color: #FFB3B3;            /* fresa pastel al foco */
+    box-shadow: 0 0 5px rgba(255,179,179,0.5);
+}
+
+/* Botón */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D2A679;        /* chocolate pastel */
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: #C17D3A;        /* chocolate más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Mensaje de error */
+.error {
+    color: #FF4C4C;                   /* rojo pastel */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Tarrina de helados */
+.tarrina {
+    width: 300px;
+    height: 400px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    background-color: #FDF6E3;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+}
+
+.sabor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: height 0.3s;
+}
+
+.chocolate { background-color: #D2A679; color: black; }
+.fresa { background-color: #FFB3B3; color: black; }
+.vainilla { background-color: #FFF3B3; color: black; }

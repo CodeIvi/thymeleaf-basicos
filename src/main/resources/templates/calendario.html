@@ -13,7 +13,7 @@
             <label for="mes">Escribe un mes</label>
             <select id="mes" th:field="*{mes}">
 
-                    <option th:each="mes,state: ${meses}" th:value="${state.index+1}" th:text="${mes}"></option>
+                    <option th:each="mes,state: ${meses}" th:value="${state.index}" th:text="${mes}"></option>
 
             </select>
         </div>
@@ -29,5 +29,27 @@
 
     </form>
 
+    <h2 th:if="${mesSeleccionado}">Calendario de [[${mesSeleccionado}]] [[${anioSeleccionado}]]</h2>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mié</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sáb</th>
+            <th>Dom</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="semana : ${semanas}">
+            <td th:each="dia : ${semana}">
+                <span th:if="${dia != null}" th:text="${dia}"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
