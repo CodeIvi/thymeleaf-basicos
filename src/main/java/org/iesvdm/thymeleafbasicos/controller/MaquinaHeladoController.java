@@ -26,11 +26,14 @@ public class MaquinaHeladoController {
 
         if(porcChoco+porcFresa+porcVainilla>100){
             model.addAttribute("error", "La suma de los porcentajes debe ser menor o igual que 100. Por favor, introduzca de nuevo los porcentajes.");
-        }else{
-            model.addAttribute("helado", maquinaHeladosDTO);
         }
+            maquinaHeladosDTO.setPorcChoco(0);
+            maquinaHeladosDTO.setPorcFresa(0);
+            maquinaHeladosDTO.setPorcVainilla(0);
+            model.addAttribute("helado", maquinaHeladosDTO);
 
-        return ("maquinaHelados");
+
+        return "maquinaHelados";
 
 
     }

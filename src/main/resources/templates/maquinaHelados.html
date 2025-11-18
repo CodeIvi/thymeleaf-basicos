@@ -51,7 +51,7 @@
         </div>
 
 
-        <div th:if="error">
+        <div th:if="${error}" th:class="'error'">
             <span th:text="${error}"></span>
         </div>
     </div>
